@@ -7,3 +7,6 @@ install:
 script:
   - gfortran --version
   - nf-config --all
+  - git clone https://github.com/geoschem/geos-chem.git Code_Dir
+  - cd Code_Dir
+  - make MET=geosfp GRID=4x5
