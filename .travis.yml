@@ -5,9 +5,18 @@ install:
   - sudo apt-get update
   - sudo apt-get install gfortran libnetcdf-dev
 
+env:
+  - CC=gcc
+  - CXX=g++
+  - FC=gfortran
+  - NETCDF_HOME=/usr
+  - GC_BIN=$NETCDF_HOME/bin
+  - GC_INCLUDE=$NETCDF_HOME/include
+  - GC_LIB=$NETCDF_HOME/lib
+
 script:
   - gfortran --version
-  - nf-config --all
+  - nc-config --all
   - git clone https://github.com/geoschem/geos-chem.git Code_Dir
   - cd Code_Dir
   - make MET=geosfp GRID=4x5
