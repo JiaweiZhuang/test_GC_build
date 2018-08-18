@@ -3,16 +3,10 @@ sudo: required
 
 install:
   - sudo apt-get update
-  - sudo apt-get install gfortran libnetcdf-dev
+  - sudo apt-get install gfortran libnetcdf-dev netcdf-bin
 
 env:
-  - CC=gcc
-  - CXX=g++
-  - FC=gfortran
-  - NETCDF_HOME=/usr
-  - GC_BIN=$NETCDF_HOME/bin
-  - GC_INCLUDE=$NETCDF_HOME/include
-  - GC_LIB=$NETCDF_HOME/lib
+  - CC=gcc CXX=g++ FC=gfortran NETCDF_HOME=/usr GC_BIN=/usr/bin GC_INCLUDE=/usr/include /usr/lib
 
 script:
   - gfortran --version
