@@ -1,0 +1,9 @@
+language: c
+sudo: required
+
+install:
+  - sudo apt-get install gfortran libnetcdf-dev libnetcdff-dev
+
+script:
+  - gfortran --version
+  - nf-config --all
